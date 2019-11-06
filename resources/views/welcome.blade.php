@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    +Rocka
                 </div>
 
                 <div class="links">
