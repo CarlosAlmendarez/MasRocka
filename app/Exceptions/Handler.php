@@ -38,6 +38,20 @@ class Handler extends ExceptionHandler
     }
 
     /**
+     * Handle an incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
+     */
+    public function handle($request, Closure $next)
+    {
+        $response = $next($request);
+
+        return response()->json($response->getOriginalContent());
+    }
+
+    /**
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -46,6 +60,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+        if($e instanceof HttpException) {
+            return response()->json($e->getMessage(), $e->getStatusCode());
+        }
+    
+        return parent::render($request, $e);
     }
 }

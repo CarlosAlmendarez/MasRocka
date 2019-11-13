@@ -40,8 +40,6 @@ class Https extends Controller
         $Rocka->nombre = $request->nombre;
 
         $Rocka->save();
-        
-        return response($engagement, 201);
     }
 
     /**
