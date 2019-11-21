@@ -15,8 +15,8 @@ class Tarjeta extends Migration
     {
         Schema::create('table_tarjeta', function (Blueprint $table) {
             $table->bigIncrements('idTarjeta');
-            $table->integer('idCliente');
-            $table->integer('numeroTarjeta');
+            $table->bigInteger('idCliente');
+            $table->bigInteger('numeroTarjeta');
             $table->string('validacion');
             $table->timestamps();
         });

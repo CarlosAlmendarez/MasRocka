@@ -14,8 +14,8 @@ class DetalleVenta extends Migration
     public function up()
     {
         Schema::create('table_detalleventa', function (Blueprint $table) {
-            $table->integer('idVenta');
-            $table->integer('idProducto');
+            $table->bigInteger('idVenta');
+            $table->bigInteger('idProducto');
             $table->integer('IVA');
             $table->integer('subtotal');
             $table->timestamps();

@@ -16,7 +16,7 @@ class Carrito extends Migration
         Schema::create('table_carrito', function (Blueprint $table) {
             $table->bigIncrements('idCarrito');
             $table->integer('total');
-            $table->integer('idCliente');
+            $table->bigInteger('idCliente');
             $table->timestamps();
         });
     }

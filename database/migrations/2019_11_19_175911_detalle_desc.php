@@ -14,8 +14,8 @@ class DetalleDesc extends Migration
     public function up()
     {
         Schema::create('table_detalledesc', function (Blueprint $table) {
-            $table->integer('idDescuento');
-            $table->integer('idProducto');
+            $table->bigInteger('idDescuento');
+            $table->bigInteger('idProducto');
             $table->string('fechainicio');
             $table->string('fechafin');
             $table->timestamps();

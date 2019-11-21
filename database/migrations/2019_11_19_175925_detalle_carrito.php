@@ -14,7 +14,7 @@ class DetalleCarrito extends Migration
     public function up()
     {
         Schema::create('table_detallecarrito', function (Blueprint $table) {
-            $table->integer('idCarrito');
+            $table->bigInteger('idCarrito');
             $table->timestamps();
         });
     }
