@@ -17,4 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('http', 'Https');
+Route::resource('User', 'users');
+
+Route::post('User/post', function(){
+    echo "Post received";
+});
