@@ -34,7 +34,11 @@ class Venta extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $total = $request->input('total');
+        
+        $cliente = new \App\venta;
+        $cliente->total = $total;
+        $cliente->save();
     }
 
     /**

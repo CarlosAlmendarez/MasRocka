@@ -34,7 +34,11 @@ class Descuento extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $porcentaje = $request->input('porcentaje');
+        
+        $descuento = new \App\descuento;
+        $descuento->porcentaje = $porcentaje;
+        $descuento->save();
     }
 
     /**

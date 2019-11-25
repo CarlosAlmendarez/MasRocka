@@ -34,7 +34,13 @@ class Carrito extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $total = $request->input('total');
+        $idCliente = $request->input('idCliente');
+
+        $carrito = new \App\carrito;
+        $carrito->total = $total;
+        $carrito->idCliente = $idCliente;
+        $carrito->save();
     }
 
     /**

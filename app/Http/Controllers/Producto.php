@@ -34,7 +34,13 @@ class Producto extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->input('nombre');
+        $existencias = $request->input('existencias');
+        
+        $producto = new \App\producto;
+        $producto->nombre = $name;
+        $producto->existencias = $existencias;
+        $producto->save();
     }
 
     /**

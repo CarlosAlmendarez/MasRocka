@@ -34,7 +34,15 @@ class Tarjeta extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $idCliente = $request->input('idCliente');
+        $numerot = $request->input('numerot');
+        $validacion = $request->input('validacion');
+        
+        $tarjeta = new \App\tarjeta;
+        $tarjeta->idCliente = $idCliente;
+        $tarjeta->numeroTarjeta = $numerot;
+        $tarjeta->validacion = $validacion;
+        $tarjeta->save();
     }
 
     /**

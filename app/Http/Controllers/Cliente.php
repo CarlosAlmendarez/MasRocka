@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class Cliente extends Controller
 {
     /**
@@ -23,7 +24,7 @@ class Cliente extends Controller
      */
     public function create()
     {
-        //
+    
     }
 
     /**
@@ -34,7 +35,17 @@ class Cliente extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = $request->input('nombre');
+        $dir = $request->input('direccion');
+        $tel = $request->input('telefono');
+        $email = $request->input('email');
+        
+        $cliente = new \App\cliente;
+        $cliente->nombre = $name;
+        $cliente->direccion = $dir;
+        $cliente->telefono = $tel;
+        $cliente->email = $email;
+        $cliente->save();
     }
 
     /**
