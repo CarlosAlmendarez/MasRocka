@@ -19,6 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('User', 'users');
 
-Route::post('User/post', function(){
-    echo "Post received";
-});
+Route::resource('Carrito', 'Carrito');
+
+Route::resource('Cliente', 'Cliente');
+
+Route::resource('Descuento', 'Descuento');
+
+Route::resource('Producto', 'Producto');
+
+Route::resource('Tarjeta', 'Tarjeta');
+
+Route::resource('Venta', 'Venta');
