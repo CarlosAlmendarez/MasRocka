@@ -25,7 +25,7 @@ class users extends Controller
      */
     public function create()
     {
-        
+        return Auth::user();
     }
 
     /**
@@ -37,12 +37,12 @@ class users extends Controller
     public function store(Request $request)
     {
         
-        $name = $request->input('name');
-        echo $name;
+        // $name = $request->input('name');
+        // echo $name;
         $email = $request->input('email');
-        echo $email;
+        // echo $email;
         $pwd = $request->input('password');
-        echo $pwd;
+        // echo $pwd;
 
         
         return User::create([

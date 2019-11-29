@@ -25,7 +25,7 @@ Route::resource('Cliente', 'Cliente');
 
 Route::resource('Descuento', 'Descuento');
 
-Route::resource('Producto', 'Producto');
+Route::resource('Producto', 'ProductController');
 
 Route::resource('Tarjeta', 'Tarjeta');
 
