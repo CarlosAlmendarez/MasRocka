@@ -37,7 +37,7 @@ class users extends Controller
     public function store(Request $request)
     {
         
-        // $name = $request->input('name');
+        $name = $request->input('name');
         // echo $name;
         $email = $request->input('email');
         // echo $email;
