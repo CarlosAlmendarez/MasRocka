@@ -13,7 +13,7 @@ class Cliente extends Migration
      */
     public function up()
     {
-        Schema::create('table_cliente', function (Blueprint $table) {
+        Schema::create('clientes', function (Blueprint $table) {
             $table->bigIncrements('idCliente');
             $table->string('nombre');
             $table->string('direccion');
@@ -30,6 +30,6 @@ class Cliente extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_cliente');
+        Schema::dropIfExists('clientes');
     }
 }

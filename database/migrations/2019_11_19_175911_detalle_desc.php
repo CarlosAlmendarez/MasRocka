@@ -13,7 +13,7 @@ class DetalleDesc extends Migration
      */
     public function up()
     {
-        Schema::create('table_detalledesc', function (Blueprint $table) {
+        Schema::create('detalledescs', function (Blueprint $table) {
             $table->bigInteger('idDescuento');
             $table->bigInteger('idProducto');
             $table->string('fechainicio');
@@ -29,6 +29,6 @@ class DetalleDesc extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_detalledesc');
+        Schema::dropIfExists('detalledescs');
     }
 }

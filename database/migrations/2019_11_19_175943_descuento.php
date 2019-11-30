@@ -13,7 +13,7 @@ class Descuento extends Migration
      */
     public function up()
     {
-        Schema::create('table_descuento', function (Blueprint $table) {
+        Schema::create('descuentos', function (Blueprint $table) {
             $table->bigIncrements('idDescuento');
             $table->integer('procentaje');
             $table->timestamps();
@@ -27,6 +27,6 @@ class Descuento extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_descuento');
+        Schema::dropIfExists('descuentos');
     }
 }

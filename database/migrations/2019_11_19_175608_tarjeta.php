@@ -13,12 +13,14 @@ class Tarjeta extends Migration
      */
     public function up()
     {
-        Schema::create('table_tarjeta', function (Blueprint $table) {
-            $table->bigIncrements('idTarjeta');
-            $table->bigInteger('idCliente');
+        Schema::create('tarjetas', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->bigInteger('user_id');
             $table->bigInteger('numeroTarjeta');
             $table->string('validacion');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -29,6 +31,6 @@ class Tarjeta extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_tarjeta');
+        Schema::dropIfExists('tarjetas');
     }
 }

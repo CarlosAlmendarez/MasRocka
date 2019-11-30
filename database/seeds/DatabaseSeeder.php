@@ -22,10 +22,16 @@ class DatabaseSeeder extends Seeder
             'path' => 'images/roca1.jpg',
             'Existencias' => 10
         ]);
+       
         App\User::create([
             'name' => 'maggie',
             'email' => 'maggie@hotmail.com',
             'password' => Hash::make('123456789'),
+        ]);
+        App\tarjeta::create([
+            'user_id' => 1,
+            'numeroTarjeta' => 123456789012,
+            'validacion' => 123
         ]);
     }
 }

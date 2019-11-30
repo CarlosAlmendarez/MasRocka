@@ -13,7 +13,7 @@ class DetalleCarrito extends Migration
      */
     public function up()
     {
-        Schema::create('table_detallecarrito', function (Blueprint $table) {
+        Schema::create('detallecarritos', function (Blueprint $table) {
             $table->bigInteger('idCarrito');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class DetalleCarrito extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_detallecarrito');
+        Schema::dropIfExists('detallecarritos');
     }
 }

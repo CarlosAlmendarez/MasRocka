@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class Tarjeta extends Controller
 {
@@ -13,7 +14,7 @@ class Tarjeta extends Controller
      */
     public function index()
     {
-        //
+        return  User::All()->first()->tarjeta;
     }
 
     /**
@@ -34,10 +35,16 @@ class Tarjeta extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [ 
+            'idCliente' => 'required', 
+            'numerotarjeta' => 'required', 
+            'validacion' => 'required', 
+        ]);
+
         $idCliente = $request->input('idCliente');
-        $numerot = $request->input('numerot');
+        $numerot = $request->input('numerotarjeta');
         $validacion = $request->input('validacion');
-        
+
         $tarjeta = new \App\tarjeta;
         $tarjeta->idCliente = $idCliente;
         $tarjeta->numeroTarjeta = $numerot;

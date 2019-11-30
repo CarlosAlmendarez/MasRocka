@@ -13,7 +13,7 @@ class Venta extends Migration
      */
     public function up()
     {
-        Schema::create('table_venta', function (Blueprint $table) {
+        Schema::create('ventas', function (Blueprint $table) {
             $table->bigIncrements('idVenta');
             $table->float('total');
             $table->timestamps();
@@ -27,6 +27,6 @@ class Venta extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_venta');
+        Schema::dropIfExists('ventas');
     }
 }

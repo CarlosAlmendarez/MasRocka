@@ -13,7 +13,7 @@ class DetalleVenta extends Migration
      */
     public function up()
     {
-        Schema::create('table_detalleventa', function (Blueprint $table) {
+        Schema::create('detalleventas', function (Blueprint $table) {
             $table->bigInteger('idVenta');
             $table->bigInteger('idProducto');
             $table->integer('IVA');
@@ -29,6 +29,6 @@ class DetalleVenta extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_detalleventa');
+        Schema::dropIfExists('detalleventas');
     }
 }

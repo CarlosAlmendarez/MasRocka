@@ -13,8 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/yop', function (Request $request) {
     return $request->user();
+});
+
+Route::get('/profile', function(){
+    return Auth::user();
 });
 
 Route::resource('User', 'users');

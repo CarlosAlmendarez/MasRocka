@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class users extends Controller
 {
@@ -15,7 +16,7 @@ class users extends Controller
      */
     public function index()
     {
-        //
+        return Auth::id();
     }
 
     /**
