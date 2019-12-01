@@ -23,18 +23,18 @@ Route::get('/profile', function(){
 });
 
 Route::post('/login', 'UserController@authenticate');
-Route::post('/logout', 'UserController@logout');
-// Auth::routes();
-Route::resource('User', 'users');
+// Route::post('/logout', 'UserController@logout');
+// // Auth::routes();
+// Route::resource('User', 'users');
 
-Route::resource('Carrito', 'Carrito');
+// Route::resource('Carrito', 'Carrito');
 
-Route::resource('Cliente', 'Cliente');
+// Route::resource('Cliente', 'Cliente');
 
-Route::resource('Descuento', 'Descuento');
+// Route::resource('Descuento', 'Descuento');
 
-Route::resource('Producto', 'ProductController');
+// Route::resource('Producto', 'ProductController');
 
-Route::resource('Tarjeta', 'Tarjeta');
+// Route::resource('Tarjeta', 'Tarjeta');
 
-Route::resource('Venta', 'Venta');
+// Route::resource('Venta', 'Venta');

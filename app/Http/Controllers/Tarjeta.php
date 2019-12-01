@@ -16,8 +16,11 @@ class Tarjeta extends Controller
     public function index()
     {
         // dd(auth()->user());
-        
-        return  auth()->user()->tarjeta;
+        $user = auth()->user();
+        if($user != null)
+            return  response()->json($user()->tarjeta, 200);
+        else 
+            return response()->json(['error' => 'Unauthorized'], 401);
     }
 
     /**
