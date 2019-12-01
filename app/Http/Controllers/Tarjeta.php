@@ -51,7 +51,6 @@ class Tarjeta extends Controller
 
         $user_id = auth()->user()->tarjeta;
 
-        $idCliente = $request->input('idCliente');
         $numerot = $request->input('numerotarjeta');
         $validacion = $request->input('validacion');
         $fechaVenc = $request->input('vencimiento');
