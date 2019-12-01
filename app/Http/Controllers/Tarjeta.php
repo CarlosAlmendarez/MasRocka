@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class Tarjeta extends Controller
 {
@@ -14,7 +15,9 @@ class Tarjeta extends Controller
      */
     public function index()
     {
-        return  User::All()->first()->tarjeta;
+        // dd(auth()->user());
+        
+        return  auth()->user()->tarjeta;
     }
 
     /**
@@ -39,17 +42,26 @@ class Tarjeta extends Controller
             'idCliente' => 'required', 
             'numerotarjeta' => 'required', 
             'validacion' => 'required', 
+            'vencimiento' => 'required'
         ]);
+
+        if ($validator->fails()) { 
+            return response()->json(['error'=>$validator->errors()], 404);            
+        }
+
+        $user_id = auth()->user()->tarjeta;
 
         $idCliente = $request->input('idCliente');
         $numerot = $request->input('numerotarjeta');
         $validacion = $request->input('validacion');
+        $fechaVenc = $request->input('vencimiento');
 
-        $tarjeta = new \App\tarjeta;
-        $tarjeta->idCliente = $idCliente;
-        $tarjeta->numeroTarjeta = $numerot;
-        $tarjeta->validacion = $validacion;
-        $tarjeta->save();
+        App\tarjeta::create([
+            'user_id' => $user,
+            'numeroTarjeta' => $numerot,
+            'vencimiento' => $fechaVenc,
+            'validacion' => $validacion
+        ]);
     }
 
     /**

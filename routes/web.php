@@ -16,5 +16,23 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/yo', function (){
+    // dd(auth()->user());
+    return auth()->user();
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('User', 'users');
+
+Route::resource('Carrito', 'Carrito');
+
+Route::resource('Cliente', 'Cliente');
+
+Route::resource('Descuento', 'Descuento');
+
+Route::resource('Producto', 'ProductController');
+
+Route::resource('Tarjeta', 'Tarjeta');
+
+Route::resource('Venta', 'Venta');

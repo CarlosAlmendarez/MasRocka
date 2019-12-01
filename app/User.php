@@ -37,9 +37,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function tarjeta(){
-    //     return $this->hasMany('App\tarjeta');
-    // }
+    public function tarjeta(){
+        return $this->hasMany('App\tarjeta');
+    }
     //  General error: 1 no such column: tarjetas.user_id 
     // (SQL: select * from "tarjetas" where "tarjetas"."user_id" = 1 and "tarjetas"."user_id" is not null)'
 }

@@ -29,6 +29,12 @@ class users extends Controller
         return Auth::user();
     }
 
+    public function login(Request $request){
+        $email = $request->input('email');
+        $pwd = $request->input('password');
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *

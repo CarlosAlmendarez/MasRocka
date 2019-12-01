@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,9 +17,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/profile', function(){
+    // return 'profile';
+    // dd(auth()->resolve());
     return Auth::user();
 });
 
+Route::post('/login', 'UserController@authenticate');
+Route::post('/logout', 'UserController@logout');
+// Auth::routes();
 Route::resource('User', 'users');
 
 Route::resource('Carrito', 'Carrito');

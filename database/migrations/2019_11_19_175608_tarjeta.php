@@ -17,6 +17,7 @@ class Tarjeta extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('user_id');
             $table->bigInteger('numeroTarjeta');
+            $table->string('vencimiento');
             $table->string('validacion');
             $table->timestamps();
 

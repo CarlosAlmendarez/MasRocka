@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
         App\tarjeta::create([
             'user_id' => 1,
             'numeroTarjeta' => 123456789012,
+            'vencimiento' => '01/2020',
             'validacion' => 123
         ]);
     }
