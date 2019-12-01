@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class Tarjeta extends Controller
 {
@@ -16,6 +17,7 @@ class Tarjeta extends Controller
     public function index()
     {
         // dd(auth()->user());
+        return Session::all();
         $user = auth()->user();
         if($user != null)
             return  response()->json($user()->tarjeta, 200);

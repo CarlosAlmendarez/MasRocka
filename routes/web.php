@@ -21,6 +21,7 @@ Route::get('/yo', function (){
     return auth()->user();
 });
 
+Route::post('/authenticate', 'UserController@authenticate');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('User', 'users');
