@@ -12,12 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(ProductTableSeeder::class);
-        App\Product::create([
+        App\producto::create([
             'nombre' => 'Roca Voladora',
             'path' => 'images/roca1.jpg',
             'Existencias' => 3
         ]);
-        App\Product::create([
+        App\producto::create([
             'nombre' => 'Roca Bebe',
             'path' => 'images/roca1.jpg',
             'Existencias' => 10
