@@ -21,6 +21,15 @@ Route::get('/yo', function (){
     return auth()->user();
 });
 
+Route::get('/yo', function (){
+    // dd(auth()->user());
+    return auth()->user();
+});
+Route::post('/salir', function (){
+    // dd(auth()->user());
+    return auth()->logout();
+});
+
 Route::post('/authenticate', 'UserController@authenticate');
 Route::get('/home', 'HomeController@index')->name('home');
 
