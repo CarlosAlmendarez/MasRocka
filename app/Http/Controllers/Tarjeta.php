@@ -17,12 +17,12 @@ class Tarjeta extends Controller
     public function index()
     {
         // dd(auth()->user());
-        return Session::all();
-        $user = auth()->user();
-        if($user != null)
-            return  response()->json($user()->tarjeta, 200);
-        else 
-            return response()->json(['error' => 'Unauthorized'], 401);
+        // return Session::all();
+        $user = Auth::user();
+        if($user != null){
+            return  response()->json($user->tarjeta, 200);
+        }
+        return response()->json(['error' => 'Unauthorized'], 401);
     }
 
     /**
@@ -32,7 +32,7 @@ class Tarjeta extends Controller
      */
     public function create()
     {
-        //
+        return Session::all();
     }
 
     /**

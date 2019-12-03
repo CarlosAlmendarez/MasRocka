@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use Auth;
+use Illuminate\Validation\ValidationException;
 
 class users extends Controller
 {
@@ -43,21 +44,17 @@ class users extends Controller
      */
     public function store(Request $request)
     {
-        
         $name = $request->input('name');
-        // echo $name;
         $email = $request->input('email');
-        // echo $email;
         $pwd = $request->input('password');
-        // echo $pwd;
-
-        
+        if(User::where('email', 'maggie@hotmail.com')->first() != null){
+            return response()->json(['error' => 'el correo ya esta en uso'], 409);
+        }
         return User::create([
             'name' => $name,
             'email' => $email,
             'password' => Hash::make($pwd),
         ]);
-        
     }
 
     /**
