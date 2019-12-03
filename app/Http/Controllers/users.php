@@ -47,7 +47,7 @@ class users extends Controller
         $name = $request->input('name');
         $email = $request->input('email');
         $pwd = $request->input('password');
-        if(User::where('email', 'maggie@hotmail.com')->first() != null){
+        if(User::where('email', $email)->first() != null){
             return response()->json(['error' => 'el correo ya esta en uso'], 409);
         }
         return User::create([
